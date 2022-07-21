@@ -115,6 +115,12 @@
       moveTarget.on("move",onMove);
       moveTarget.on("moveend",onMoveEnd);
 
+          if (options.move_slider_on_hover) {
+        container.on("mouseenter", onMoveStart);
+        container.on("mousemove", onMove);
+        container.on("mouseleave", onMoveEnd);
+      }
+      
       slider.on("touchmove", function(e) {
         e.preventDefault();
       });
