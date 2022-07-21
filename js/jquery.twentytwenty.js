@@ -4,7 +4,7 @@
     var options = $.extend({
       default_offset_pct: 0.5,
       orientation: 'horizontal',
-      no_overlay: false,
+      no_overlay: true,
       move_with_handle_only: true,
       click_to_move: false
     }, options);
@@ -114,12 +114,6 @@
       moveTarget.on("movestart",onMoveStart);
       moveTarget.on("move",onMove);
       moveTarget.on("moveend",onMoveEnd);
-
-      if (options.move_slider_on_hover) {
-        container.on("mouseenter", onMoveStart);
-        container.on("mousemove", onMove);
-        container.on("mouseleave", onMoveEnd);
-      }
 
       slider.on("touchmove", function(e) {
         e.preventDefault();
